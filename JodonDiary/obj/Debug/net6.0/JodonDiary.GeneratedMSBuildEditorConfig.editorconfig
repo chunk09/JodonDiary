@@ -1,0 +1,52 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = JodonDiary
+build_property.RootNamespace = JodonDiary
+build_property.ProjectDir = /Users/hellouser/RiderProjects/JodonDiary/JodonDiary/
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = /Users/hellouser/RiderProjects/JodonDiary/JodonDiary
+build_property._RazorSourceGeneratorDebug = 
+
+[/Users/hellouser/RiderProjects/JodonDiary/JodonDiary/Views/Diary/AnotherList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRGlhcnkvQW5vdGhlckxpc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/hellouser/RiderProjects/JodonDiary/JodonDiary/Views/Diary/Diary.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRGlhcnkvRGlhcnkuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/hellouser/RiderProjects/JodonDiary/JodonDiary/Views/Diary/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRGlhcnkvSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/hellouser/RiderProjects/JodonDiary/JodonDiary/Views/Diary/MyList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRGlhcnkvTXlMaXN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/hellouser/RiderProjects/JodonDiary/JodonDiary/Views/Diary/Update.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRGlhcnkvVXBkYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/hellouser/RiderProjects/JodonDiary/JodonDiary/Views/Diary/Write.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRGlhcnkvV3JpdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/hellouser/RiderProjects/JodonDiary/JodonDiary/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/hellouser/RiderProjects/JodonDiary/JodonDiary/Views/User/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVXNlci9Mb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/hellouser/RiderProjects/JodonDiary/JodonDiary/Views/User/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVXNlci9SZWdpc3Rlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 

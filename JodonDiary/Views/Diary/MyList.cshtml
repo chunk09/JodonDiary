@@ -1,0 +1,72 @@
+@using JodonDiary.Models
+@model dynamic
+
+@{
+    ViewBag.Title = "내 일기";
+    Layout = "_Layout";
+}
+
+
+<div class="list-form">
+    @if (Context.Session.GetInt32("Jodon-Id") != null)
+    {
+      <h1>내 일기장</h1>
+
+      <table>
+        <tr>
+          <th>ID</th>
+          <th>제목</th>
+          <th>날짜</th>
+          <th>일기장</th>
+        </tr>
+
+        @foreach (var diary in (List<Diary>) ViewData["Diarys"])
+        {
+          @if (diary.user_key == Context.Session.GetInt32("Jodon-Id"))
+          {
+            <tr>
+              <td>@diary.id</td>
+              <td>@diary.title</td>
+              <td>@diary.date</td>
+              <td><a class="move" href="/diary/@diary.id">클릭</a></td>
+            </tr>
+          }
+        }
+      </table>
+    }
+    else
+    {
+      <h1>로그인 해주세요.</h1>
+    }
+</div>
+
+<style>
+  .list-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10%;
+  }
+  
+  h1 {
+    margin-bottom: 1%;
+  }
+  
+  table, th, tr, td {
+    border: 1px solid white;
+    border-collapse: collapse;
+  }
+          
+  th, td {
+    padding: 15px;
+  }
+          
+  td {
+    text-align: center;
+  }
+  
+  .move {
+    color: deepskyblue;
+  }
+</style>

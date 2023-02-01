@@ -1,0 +1,64 @@
+@using JodonDiary.Models
+@model dynamic
+
+@{
+    ViewBag.Title = "다른 유저 일기 보기";
+    Layout = "_Layout";
+}
+
+<div class="list-form">
+    <h1>다른 유저의 일기장</h1>
+    
+    <table>
+      <tr>
+        <th>ID</th>
+        <th>제목</th>
+        <th>날짜</th>
+        <th>일기장</th>
+      </tr>
+        
+      @foreach (var diary in (List<Diary>) ViewData["Diarys"])
+      {
+        @if (diary.private_check == 0)
+        {
+          <tr>
+            <td>@diary.id</td>
+            <td>@diary.title</td>
+            <td>@diary.date</td>
+            <td><a class="move" href="/diary/@diary.id">클릭</a></td>
+          </tr>
+        }
+      }
+    </table>
+</div>
+
+<style>
+  .list-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10%;
+  }
+  
+  h1 {
+    margin-bottom: 1%;
+  }
+  
+  table, th, tr, td {
+    border: 1px solid white;
+    border-collapse: collapse;
+  }
+          
+  th, td {
+    padding: 15px;
+  }
+          
+  td {
+    text-align: center;
+  }
+  
+  .move {
+    color: deepskyblue;
+  }
+</style>

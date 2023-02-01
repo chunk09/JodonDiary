@@ -1,0 +1,132 @@
+@model dynamic
+@using Microsoft.AspNetCore.Http
+
+@{
+    ViewBag.Title = "일기 업데이트";
+    Layout = "_Layout";
+}
+
+<div class="update-form">
+    @if (Context.Session.GetInt32("Jodon-Id") != null)
+    {
+        <form method="post" action="/update-post/@ViewData["id"]">
+            <input class="input" autocomplete="off" name="title" value="@ViewData["diary-title"]" placeholder="제목을 입력해주세요" type="text"/>
+            <textarea class="textarea" id="textarea" rows="1" autocomplete="off" name="content" placeholder="내용을 입력해주세요">@ViewData["content"]</textarea>
+            
+            @if ((bool) ViewData["checked"])
+            {
+                <label class="private-check"><input type="checkbox" name="private" value="비공개" checked /> 비공개</label>
+            }
+            else
+            {
+                <label class="private-check"><input type="checkbox" name="private" value="비공개" /> 비공개</label>
+            }
+
+            <div class="button-form">
+                <button>업데이트</button>
+                <a href="/"><button type="button">취소</button></a>
+            </div>
+        </form>
+    }
+    else
+    {
+        <h1>로그인이 필요합니다.</h1>
+    }
+</div>
+
+<style>
+    .update-form {
+        padding-top: 5%;
+        margin: 0;
+        overflow-x: hidden;
+    }
+    
+    @@media (max-width: 1700px) {
+        .update-form {
+            padding-top: 7%;
+        }
+    }
+    
+    @@media (max-width: 1200px) {
+        .update-form {
+            padding-top: 9%;
+        }
+    }
+    
+    .input {
+        width: 100%;       
+        font-size: 2rem;
+        border: none;
+        background-color: transparent;
+        color: white;
+        margin: 1%;
+    }
+    
+    .private-check {
+        margin: 1%;
+        /*margin-top: 100.5%;*/
+        color: white;
+    }
+    
+    .textarea {
+        width: 100%;      
+        border: none;
+        background-color: transparent;
+        color: white;
+        margin-left: 1%;
+        font-size: 1rem;
+        overflow: hidden;
+    }
+    
+    input:focus {
+        outline: none;
+    }
+    
+    textarea:focus {
+        outline: none;
+    }
+    
+    button:first-child {
+        width: 10%;
+        border: none;
+        padding: 10px;
+        background-color: dodgerblue;
+        border-radius: 10px;
+        color: white;
+        margin-left: 1%;
+    }
+    
+    button:last-child {
+        width: 10%;
+        border: none;
+        padding: 10px;
+        background-color: gray;
+        border-radius: 10px;
+        color: white;
+        margin-left: 1%;
+    }
+    
+    .button-form {
+        margin-top: 1%;
+    }
+</style>
+
+<script>
+    const textarea = document.getElementById("textarea");
+    
+    textarea.addEventListener("keydown", (e) => {            
+        if (textarea) {
+          textarea.style.height = 'auto';
+          let height = textarea.scrollHeight; // 높이
+          textarea.style.height = `${height + 8}px`;
+        }
+    })
+    
+    textarea.addEventListener("keyup", (e) => {
+        if (textarea) {
+          textarea.style.height = 'auto';
+          let height = textarea.scrollHeight; // 높이
+          textarea.style.height = `${height + 8}px`;
+        }
+    })
+</script>

@@ -1,0 +1,62 @@
+@model dynamic
+@using Microsoft.AspNetCore.Http
+
+@{
+    Layout = "_Layout";
+    ViewBag.Title = "일기 보기";
+}
+
+<div class="diary-form">
+    <h1>@ViewData["diary-title"] - @ViewData["name"]</h1>
+    <pre>@ViewData["content"]</pre>
+    
+    @if (Context.Session.GetInt32("Jodon-Id") == (Int32) ViewData["id"])
+    {
+        <a href="/delete-diary/@ViewData["diary-id"]"><button class="delete">삭제</button></a>
+        <a href="/update-diary/@ViewData["diary-id"]"><button class="update">업데이트</button></a>
+    }
+</div>
+
+<style>
+    .diary-form {
+        padding-top: 5%;
+        margin-left: 1%;
+        overflow-x: hidden;
+    }
+    
+    @@media (max-width: 1700px) {
+        .diary-form {
+            padding-top: 7%;
+        }
+    }
+    
+    @@media (max-width: 1200px) {
+        .diary-form {
+            padding-top: 9%;
+        }
+    }
+    
+    pre {
+        font-size: 1rem;
+        margin-top: 0.5%;
+    }
+    
+    .delete {
+        width: 5%;
+        border: none;
+        padding: 10px;
+        background-color: red;
+        border-radius: 10px;
+        color: white;
+        margin-top: 1%;
+    }
+    .update {
+        width: 5%;
+        border: none;
+        padding: 10px;
+        background-color: deepskyblue;
+        border-radius: 10px;
+        color: white;
+        margin-top: 1%;
+    }
+</style>
